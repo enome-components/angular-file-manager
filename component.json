@@ -17,12 +17,12 @@
     "index.js",
     "js/breadcrumbs.js",
     "js/extra-events.js",
-    "js/fileupload.js",
+    "js/droparea.js",
     "js/directories.js",
     "js/files.js",
     "template.js"
   ],
   "styles": [
-    "angular-filesystem.css"
+    "angular-file-manager.css"
   ]
 }

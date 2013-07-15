@@ -1,5 +1,5 @@
 
-build: components index.js angular-filesystem.css template.js
+build: components index.js angular-file-manager.css template.js
 	@component build --dev -v
 
 template.js: template.html

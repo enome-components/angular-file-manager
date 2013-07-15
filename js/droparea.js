@@ -1,7 +1,7 @@
 var normalize = require('normalized-upload');
-var module = window.angular.module('fileupload', []);
+var module = window.angular.module('droparea', []);
 
-module.directive('fileupload', function ($document) {
+module.directive('droparea', function ($document) {
 
   return {
 

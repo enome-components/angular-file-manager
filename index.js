@@ -2,12 +2,12 @@ require('webfont');
 
 require('./js/breadcrumbs');
 require('./js/extra-events');
-require('./js/fileupload');
+require('./js/droparea');
 require('./js/directories');
 require('./js/files');
 
 var module = window.angular.module('file-manager',
-  ['breadcrumbs', 'extra-events', 'fileupload', 'directories', 'files']);
+  ['breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
 
 module.run(function ($templateCache) {
   $templateCache.put('template.html', require('./template'));
@@ -51,7 +51,7 @@ module.directive('fileManager', function () {
       $scope.remove_selected = function (path) {
 
         var i;
-        var re = new RegExp(path + '($|/)');
+        var re = new RegExp('^' + path.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&") + '($|/)');
 
         for (i = $scope.selected.length - 1; i >= 0; i -= 1) {
           if (re.test($scope.selected[i])) {
