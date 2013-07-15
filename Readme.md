@@ -32,6 +32,12 @@ npm init
 node app.js
 ```
 
+or
+
+```sh
+git clone https://github.com/enome-components/angular-file-manager.git && cd angular-file-manager && make build && cd example && npm install && node app.js
+```
+
 ## License
 
   MIT
