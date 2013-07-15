@@ -6,6 +6,7 @@ var directories = function (app, dir) {
 
   app.get('/directories/:path(*)',
           getPaths,
+          middleware.validatePaths,
           middleware.readDirectory,
           middleware.createStats,
           middleware.mergePathsAndStats,
@@ -21,6 +22,7 @@ var directories = function (app, dir) {
 
   app.del('/directories/:path(*)',
             getPaths,
+            middleware.validatePaths,
             middleware.removeDirectory,
             function (req, res) {
               res.send(200);
@@ -28,6 +30,7 @@ var directories = function (app, dir) {
 
   app.post('/directories/',
             getPaths,
+            middleware.validatePaths,
             middleware.createDirectory,
             function (req, res) {
               res.json({
@@ -38,6 +41,7 @@ var directories = function (app, dir) {
 
   app.put('/directories/',
             getPaths,
+            middleware.validatePaths,
             middleware.pathExists,
             middleware.updateDirectory,
             function (req, res) {

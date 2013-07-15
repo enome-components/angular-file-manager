@@ -1,4 +1,5 @@
 var fs = require('fs');
+var path = require('path');
 var async = require('async');
 var rimraf = require('rimraf');
 
@@ -19,6 +20,18 @@ var middleware = {
       next();
 
     };
+
+  },
+
+  validatePaths: function (req, res, next) {
+
+    var re = new RegExp('^' + res.locals.absolute_path.replace(/[\-\[\]{}()*+?.,\\\^$|#\s]/g, "\\$&") + '($|/)');
+
+    if (!re.test(path.normalize(res.locals.absolute_path))) {
+      return next(403);
+    }
+
+    next();
 
   },
 

@@ -6,6 +6,7 @@ var files = function (app, dir) {
 
   app.get('/files/:path(*)',
           getPaths,
+          middleware.validatePaths,
           middleware.isFile, // skip to next route
           middleware.readDirectory,
           middleware.createStats,
@@ -24,6 +25,7 @@ var files = function (app, dir) {
 
   app.post('/files/:path(*)', 
            getPaths,
+           middleware.validatePaths,
            middleware.pathExists,
            middleware.createFile,
            function (req, res) {
@@ -35,6 +37,7 @@ var files = function (app, dir) {
 
   app.del('/files/:path(*)',
             getPaths,
+            middleware.validatePaths,
             middleware.removeFile,
             function (req, res) {
               res.send(200);
@@ -42,6 +45,7 @@ var files = function (app, dir) {
 
   app.put('/files/',
             getPaths,
+            middleware.validatePaths,
             middleware.pathExists,
             middleware.updateDirectory,
             function (req, res) {
