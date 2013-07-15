@@ -47,7 +47,9 @@ var middleware = {
   readDirectory: function (req, res, next) {
 
     fs.readdir(res.locals.absolute_path, function (err, response) {
-      res.locals.files_and_directories = response;
+      res.locals.files_and_directories = response.filter(function (item) {
+        return item.charAt(0) !== '.';
+      });
       next(err);
     });
 
