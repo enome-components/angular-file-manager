@@ -1,0 +1,28 @@
+{
+  "name": "angular-file-manager",
+  "repo": "enome-components/angular-file-manager",
+  "description": "File manager for uploading and selecting files and directories.",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "necolas/normalize.css": "*",
+    "timoxley/font-awesome": "*",
+    "enome-components/webfont": "*",
+    "component/upload": "*",
+    "component/normalized-upload": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "js/breadcrumbs.js",
+    "js/extra-events.js",
+    "js/fileupload.js",
+    "js/directories.js",
+    "js/files.js",
+    "template.js"
+  ],
+  "styles": [
+    "angular-filesystem.css"
+  ]
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='my-app'>
+  <head>
+    <title>enome-components/angular-filesystem</title>
+    <link href='build/build.css' rel='stylesheet' type='text/css' />
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular-resource.js'></script>
+    <script src='build/build.js'></script>
+    <script>
+      require('angular-file-manager');
+      var module = angular.module('my-app', ['file-manager']);
+      module.controller('Ctrl', function ($scope) {
+        $scope.selected = [];
+
+        $scope.$watch('selected', function (v) {
+          console.log('selected', v);
+        }, true);
+
+      });
+    </script>
+    <style>
+      body { margin: 20px; }
+    </style>
+  </head>
+  <body ng-controller='Ctrl'>
+    <file-manager url='/fileserver' selected='selected'></file-manager>
+  </body>
+</html>

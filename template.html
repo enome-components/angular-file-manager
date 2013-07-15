@@ -1,0 +1,65 @@
+<div class='fs'>
+
+  <header>
+    <bread-crumbs path='path'></bread-crumbs>
+  </header>
+
+  <div ng-controller='DirectoriesCtrl'>
+
+    <h2><i class='icon-folder-close-alt'></i> Directories</h2>
+
+    <div class='row' >
+      <form ng-submit='create()'>
+        <input type='text' placeholder='New directory name' ng-model='directory_name' required />
+      </form>
+    </div>
+
+    <div class='row' ng-controller='DirectoryCtrl' ng-repeat='directory in directories'>
+
+      <div class='col1'>
+        <input type='checkbox' ng-change='select(directory, s)' ng-model='s' />
+      </div>
+
+      <div class='col2'>
+        <input class='inline' type='text' 
+               ng-model='directory.name' 
+               ng-focus='storeName(directory)' 
+               ng-blur='update(directory)' 
+               ng-readonly='directory.readonly' 
+               ng-dblclick='visit(directory)' 
+               ng-click='enableRead(directory)'/>
+  
+      </div>
+
+      <div class='col3'>
+        <button ng-click='remove(directory);'><i class='icon-trash'></i></button>
+      </div>
+
+  </div>
+
+  <div class='files' ng-controller='FilesCtrl'>
+
+    <h2><i class='icon-file-text-alt'></i> Files</h2>
+
+    <fileupload class='upload' url='path' files='uploaded_files'></fileupload>   
+
+    <div class='row file' ng-controller='FileCtrl' ng-repeat='file in files'>
+
+      <div class='col1'>
+        <input type='checkbox' ng-change='select(file, s)' ng-model='s' />
+      </div>
+
+      <div class='col2'>
+        <input class='inline' type='text' ng-model='file.name' ng-focus='storeName(file)' ng-blur='update(file)' ng-readonly='file.readonly' ng-click='enableRead(file)' ng-dblclick='preview(file)' />
+      </div>
+
+      <div class='col3' ng-show='file.uploading'>{{file.progress}}%</div>
+
+      <div class='col3' ng-show='!file.uploading'>
+        <button ng-click='remove(file)'><i class='icon-trash'></i></button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
