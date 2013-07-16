@@ -28,7 +28,7 @@ var module = angular.module('my-app', ['file-manager']);
 ```sh
 make build
 cd example
-npm init
+npm install
 node app.js
 ```
 
