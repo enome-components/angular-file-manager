@@ -1,19 +1,17 @@
-body {
-  background: #F7F7F7;
+.file-manager {
+  background: #f7f7f7;
   font-family: 'Roboto Condensed';
   font-weight: 300;
   color: #787878;
 }
-
-header {
-  background: #2B3D50;
-  color: white;
+.file-manager header {
+  background: #2b3d50;
+  color: #fff;
   padding: 15px 20px;
 }
-
-header button {
+.file-manager header button {
   font-size: 16px;
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   padding: 0;
   margin: 0;
@@ -21,110 +19,91 @@ header button {
   border: 0 none;
   font-weight: 300;
 }
-
-header button:hover {
-  color: #6ED2DD;
+.file-manager header button:hover {
+  color: #6ed2dd;
 }
-
-h2 {
-  background: #6ED2DD;
-  color: white;
+.file-manager h2 {
+  background: #6ed2dd;
+  color: #fff;
   font-size: 15px;
   font-weight: 300;
   text-transform: uppercase;
   padding: 5px 15px;
   margin: 0;
-  word-spacing: 6px
+  word-spacing: 6px;
 }
-
-h2 [class^="icon-"], h2 [class*=" icon-"] {
-  color: white;
+.file-manager h2 [class^="icon-"],
+.file-manager h2 [class*=" icon-"] {
+  color: #fff;
 }
-
-.files {
+.file-manager .files {
   position: relative;
+  overflow: hidden;
 }
-
-.row {
+.file-manager .row {
   position: relative;
-  background: white;
-  border-bottom: 1px solid #F7F7F7;
+  background: #fff;
+  border-bottom: 1px solid #f7f7f7;
   min-height: 45px;
 }
-
-.upload {
-  position: absolute;
-  margin-top: 30px;
-  z-index: 5000;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 200px;
-}
-
-.upload {
+.file-manager .droparea {
+  margin: 10px;
+  line-height: 100px;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  color: #c0c0c0;
   border: 3px dashed #e3e3e3;
   text-align: center;
-  position: absolute;
   padding: 10px;
-  background: white;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  background: #fff;
 }
-
-[class^="icon-"], [class*=" icon-"] {
+.file-manager .droparea.over {
+  background: #f5f5f5;
+}
+.file-manager [class^="icon-"],
+.file-manager [class*=" icon-"] {
   font-size: 14px;
   color: #787878;
 }
-
-.col1, .col2, .col3 {
+.file-manager .col1,
+.file-manager .col2,
+.file-manager .col3 {
   position: absolute;
   top: 10px;
 }
-
-.col1 {
+.file-manager .col1 {
   border-right: 1px solid #e3e3e3;
   width: 55px;
   text-align: center;
   left: 0;
 }
-
-.col2 {
+.file-manager .col2 {
   position: absolute;
   top: 7px;
   left: 65px;
   right: 75px;
 }
-
-.col3 {
+.file-manager .col3 {
   position: absolute;
   right: 0;
   border-left: 1px solid #e3e3e3;
   width: 55px;
   text-align: center;
 }
-
-input {
+.file-manager input {
   color: #787878;
   border: 1px solid #e3e3e3;
 }
-
-input.inline {
+.file-manager input.inline {
   font-weight: 300;
   padding: 3px 5px;
   width: 100%;
   -moz-box-shadow: none;
 }
-
-input:invalid {
+.file-manager input:invalid {
   box-shadow: none;
 }
-
-
-input[readonly] {
+.file-manager input[readonly] {
   border: 0 none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -132,14 +111,12 @@ input[readonly] {
   user-select: none;
   background: none;
 }
-
-input[readonly]:hover {
+.file-manager input[readonly]:hover {
   text-decoration: underline;
-  color: #6ED2DD;
+  color: #6ed2dd;
   cursor: pointer;
 }
-
-button {
+.file-manager button {
   background: none;
   padding: 0;
   margin: 0;
@@ -147,12 +124,10 @@ button {
   padding: 0 7px;
   text-align: center;
 }
-
-form {
+.file-manager form {
   padding: 10px;
 }
-
-form input {
+.file-manager form input {
   width: 100%;
   padding: 5px;
   box-sizing: border-box;

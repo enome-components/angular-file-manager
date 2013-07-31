@@ -139,8 +139,10 @@ module.controller('FileCtrl', function ($scope, $http, $timeout) {
 
   };
 
-  $scope.s = $scope.selected.some(function (path) {
-    return $scope.file.path === path;
+  $scope.$watch('selected.length', function () {
+    $scope.s = $scope.selected.some(function (path) {
+      return $scope.file.path === path;
+    });
   });
 
   $scope.preview = function (file) {

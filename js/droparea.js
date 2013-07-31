@@ -6,7 +6,8 @@ module.directive('droparea', function ($document) {
   return {
 
     restrict: 'E',
-    template: '<div></div>',
+    template: '<div>Drop</div>',
+    replace: true,
     scope: { url: '=', files: '=' },
     link: function ($scope, el, attrs) {
 
@@ -57,17 +58,18 @@ module.directive('droparea', function ($document) {
         });
 
         el.css('display', 'none');
+        el.removeClass('over');
         e.stopPropagation();
         e.preventDefault();
         return false;
       });
 
       el.bind('dragenter', function (e) {
-        el.css('background', '#F7F7F7');
+        el.addClass('over');
       });
 
       el.bind('dragleave', function (e) {
-        el.css('background', 'white');
+        el.removeClass('over');
       });
 
     }

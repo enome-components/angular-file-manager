@@ -1,5 +1,5 @@
 
-build: components index.js angular-file-manager.css template.js
+build: components index.js angular-file-manager.css template.js stylus
 	@component build --dev -v
 
 template.js: template.html
@@ -10,5 +10,8 @@ components: component.json
 
 clean:
 	rm -fr build components template.js
+
+stylus:
+	stylus .
 
 .PHONY: clean

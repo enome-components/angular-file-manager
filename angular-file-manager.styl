@@ -1,0 +1,127 @@
+.file-manager
+  background: #F7F7F7
+  font-family: 'Roboto Condensed'
+  font-weight: 300
+  color: #787878
+
+  header
+    background: #2B3D50
+    color: white
+    padding: 15px 20px
+
+    button
+      font-size: 16px
+      color: white
+      text-transform: uppercase
+      padding: 0
+      margin: 0
+      background: none
+      border: 0 none
+      font-weight: 300
+
+      &:hover
+        color: #6ED2DD
+
+  h2
+    background: #6ED2DD
+    color: white
+    font-size: 15px
+    font-weight: 300
+    text-transform: uppercase
+    padding: 5px 15px
+    margin: 0
+    word-spacing: 6px
+    [class^="icon-"], [class*=" icon-"]
+      color: white
+
+  .files
+    position: relative
+    overflow: hidden
+
+  .row
+    position: relative
+    background: white
+    border-bottom: 1px solid #F7F7F7
+    min-height: 45px
+
+  .droparea
+    margin: 10px
+    line-height: 100px
+    font-size: 1.75em
+    text-transform: uppercase
+    color: silver
+    border: 3px dashed #e3e3e3
+    text-align: center
+    padding: 10px
+    background: white
+
+    &.over
+      background: whitesmoke
+
+  [class^="icon-"], [class*=" icon-"]
+    font-size: 14px
+    color: #787878
+
+  .col1, .col2, .col3
+    position: absolute
+    top: 10px
+
+  .col1
+    border-right: 1px solid #e3e3e3
+    width: 55px
+    text-align: center
+    left: 0
+
+  .col2
+    position: absolute
+    top: 7px
+    left: 65px
+    right: 75px
+
+  .col3
+    position: absolute
+    right: 0
+    border-left: 1px solid #e3e3e3
+    width: 55px
+    text-align: center
+
+  input
+    color: #787878
+    border: 1px solid #e3e3e3
+
+    &.inline
+      font-weight: 300
+      padding: 3px 5px
+      width: 100%
+      -moz-box-shadow: none
+
+    &:invalid
+      box-shadow: none
+
+    &[readonly]
+      border: 0 none
+      -webkit-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+      background: none
+      &:hover
+        text-decoration: underline
+        color: #6ED2DD
+        cursor: pointer
+
+  button
+    background: none
+    padding: 0
+    margin: 0
+    border: 0
+    padding: 0 7px
+    text-align: center
+
+  form
+    padding: 10px
+    input
+      width: 100%
+      padding: 5px
+      box-sizing: border-box
+      -moz-box-sizing: border-box
