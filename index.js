@@ -10,16 +10,15 @@ var module = window.angular.module('file-manager',
   ['breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
 
 module.run(function ($templateCache) {
-  $templateCache.put('template.html', require('./template'));
   window.WebFont.load({ google: { families: ['Roboto Condensed:300,400,700'] } });
 });
 
 module.directive('fileManager', function () {
   return {
     restrict: 'E',
-    templateUrl: 'template.html',
+    template: require('./template'),
     scope: {
-      url: '@',
+      url: '=',
       selected: '=selected'
     },
     controller: function ($scope, $timeout) {

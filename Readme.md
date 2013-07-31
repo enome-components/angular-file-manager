@@ -17,7 +17,7 @@ var module = angular.module('my-app', ['file-manager']);
 ```
 
 ```html
-<file-manager url='/fileserver' selected='selected'></file-manager>
+<file-manager url='"/fileserver"' selected='selected'></file-manager>
 ```
 
 - url: server end-point to crud files and dirs
