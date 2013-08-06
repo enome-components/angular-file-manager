@@ -23,6 +23,10 @@ module.controller('DirectoriesCtrl', function ($scope, $http) {
 
   $scope.create = function () {
 
+    if (!$scope.directory_name) {
+      return;
+    }
+
     var data = {
       path: $scope.path,
       name: $scope.directory_name.replace(/\//g, '')

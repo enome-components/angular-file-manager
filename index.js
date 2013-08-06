@@ -1,4 +1,5 @@
 require('webfont');
+require('angular-enter-directive');
 
 require('./js/breadcrumbs');
 require('./js/extra-events');
@@ -7,7 +8,7 @@ require('./js/directories');
 require('./js/files');
 
 var module = window.angular.module('file-manager',
-  ['breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
+  ['ngEnter', 'breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
 
 module.run(function ($templateCache) {
   window.WebFont.load({ google: { families: ['Roboto Condensed:300,400,700'] } });

@@ -7,10 +7,8 @@
 
     <h2><i class='icon-folder-close-alt'></i> Directories</h2>
 
-    <div class='row' >
-      <form name='file-manager-form' ng-submit='create()'>
-        <input type='text' placeholder='New directory name' ng-model='directory_name' required />
-      </form>
+    <div class='row directory_create' >
+      <input type='text' placeholder='New directory name' ng-model='directory_name' ng-enter='create()'/>
     </div>
 
     <div class='row' ng-controller='DirectoryCtrl' ng-repeat='directory in directories'>
