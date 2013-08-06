@@ -25,9 +25,11 @@ module.controller('FilesCtrl', function ($scope, $http) {
 
   $scope.$watch('uploaded_files.length', function (v) {
 
-    if (v.length === 0) { return; }
+    if (v === 0) { return; }
 
     $scope.uploaded_files.forEach(function (file) {
+
+      if (file.kind !== 'file') { return; }
 
       var data = {
         name: file.name,
