@@ -8,7 +8,7 @@ module.directive('droparea', function ($document) {
     restrict: 'E',
     template: '<div>Drop</div>',
     replace: true,
-    scope: { url: '=', files: '=' },
+    scope: { files: '=' },
     link: function ($scope, el, attrs) {
 
       var drags = 0;
