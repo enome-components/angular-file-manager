@@ -47,7 +47,7 @@ module.directive('droparea', function ($document) {
         return false;
       });
 
-      el.bind('drop', function (e) {
+      el[0].addEventListener('drop', function (e) {
         drags = 0;
 
         $scope.files.length = 0;
@@ -64,11 +64,11 @@ module.directive('droparea', function ($document) {
         return false;
       });
 
-      el.bind('dragenter', function (e) {
+      el[0].addEventListener('dragenter', function (e) {
         el.addClass('over');
       });
 
-      el.bind('dragleave', function (e) {
+      el[0].addEventListener('dragleave', function (e) {
         el.removeClass('over');
       });
 
