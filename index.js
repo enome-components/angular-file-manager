@@ -7,14 +7,14 @@ require('./js/droparea');
 require('./js/directories');
 require('./js/files');
 
-var module = window.angular.module('file-manager',
+var mod = window.angular.module('file-manager',
   ['ngEnter', 'breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
 
-module.run(function ($templateCache) {
+mod.run(function ($templateCache) {
   window.WebFont.load({ google: { families: ['Roboto Condensed:300,400,700'] } });
 });
 
-module.directive('fileManager', function () {
+mod.directive('fileManager', function () {
   return {
     restrict: 'E',
     template: require('./template'),
@@ -84,3 +84,5 @@ module.directive('fileManager', function () {
     }
   };
 });
+
+module.exports = 'file-manager';
