@@ -7,7 +7,7 @@
 
     <h2><i class='icon-folder-close-alt'></i> Directories</h2>
 
-    <div class='row directory_create' >
+    <div class='row directory_create'>
       <input type='text' placeholder='New directory name' ng-model='directory_name' ng-enter='create()'/>
     </div>
 
@@ -32,9 +32,11 @@
         <button ng-click='remove(directory);'><i class='icon-trash'></i></button>
       </div>
 
+    </div>
+
   </div>
 
-  <div class='files' ng-controller='FilesCtrl'>
+  <div ng-controller='FilesCtrl' class='files'>
 
     <h2><i class='icon-file-text-alt'></i> Files</h2>
 
