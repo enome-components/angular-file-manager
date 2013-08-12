@@ -1,27 +1,25 @@
 require('webfont');
-require('angular-enter-directive');
 
-require('./js/breadcrumbs');
-require('./js/extra-events');
-require('./js/droparea');
-require('./js/directories');
-require('./js/files');
-
-var mod = window.angular.module('file-manager',
-  ['ngEnter', 'breadcrumbs', 'extra-events', 'droparea', 'directories', 'files']);
+var mod = window.angular.module('file-manager', [
+  require('angular-safe-apply'),
+  require('angular-enter-directive'),
+  require('angular-droparea'),
+  require('./js/breadcrumbs'),
+  require('./js/extra-events'),
+  require('./js/directories'),
+  require('./js/files')
+]);
 
 mod.run(function ($templateCache) {
-  window.WebFont.load({ google: { families: ['Roboto Condensed:300,400,700'] } });
+  window.WebFont.load({ google: { families: ['Roboto Condensed:300'] } });
 });
 
 mod.directive('fileManager', function () {
   return {
     restrict: 'E',
     template: require('./template'),
-    scope: {
-      url: '=',
-      selected: '=selected'
-    },
+    replace: true,
+    scope: { url: '=', selected: '=selected' },
     controller: function ($scope, $timeout) {
 
       $scope.path = '/';
@@ -81,8 +79,14 @@ mod.directive('fileManager', function () {
         i.readonly = 'readonly';
       };
 
+      $scope.unfocus = function (e) {
+        e.target.blur();
+      };
+
     }
+
   };
+
 });
 
 module.exports = 'file-manager';

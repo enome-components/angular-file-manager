@@ -11,7 +11,7 @@
       require('angular-file-manager');
       var module = angular.module('my-app', ['file-manager']);
       module.controller('Ctrl', function ($scope) {
-        $scope.selected = [];
+        $scope.selected = ['/1'];
 
         $scope.$watch('selected', function (v) {
           console.log('selected', v);
@@ -25,5 +25,6 @@
   </head>
   <body ng-controller='Ctrl'>
     <file-manager url='"/fileserver"' selected='selected'></file-manager>
+    <file-manager url='"/fileserver"' selected='selected' ng-hide='true'></file-manager>
   </body>
 </html>

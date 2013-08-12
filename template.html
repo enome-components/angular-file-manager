@@ -8,7 +8,7 @@
     <h2><i class='icon-folder-close-alt'></i> Directories</h2>
 
     <div class='row directory_create'>
-      <input type='text' placeholder='New directory name' ng-model='directory_name' ng-enter='create()'/>
+      <input type='text' placeholder='New directory name' ng-model='directory_name' ng-enter='create($event)'/>
     </div>
 
     <div class='row' ng-controller='DirectoryCtrl' ng-repeat='directory in directories'>
@@ -24,6 +24,7 @@
                ng-blur='update(directory)' 
                ng-readonly='directory.readonly' 
                ng-dblclick='visit(directory)' 
+               ng-enter='unfocus($event)'
                ng-click='enableRead(directory)'/>
   
       </div>
@@ -49,7 +50,14 @@
       </div>
 
       <div class='col2'>
-        <input class='inline' type='text' ng-model='file.name' ng-focus='storeName(file)' ng-blur='update(file)' ng-readonly='file.readonly' ng-click='enableRead(file)' ng-dblclick='preview(file)' />
+        <input class='inline' type='text' 
+               ng-model='file.name' 
+               ng-focus='storeName(file)'
+               ng-blur='update(file)'
+               ng-readonly='file.readonly'
+               ng-enter='unfocus($event)'
+               ng-click='enableRead(file)'
+               ng-dblclick='preview(file)' />
       </div>
 
       <div class='col3' ng-show='file.uploading'>{{file.progress}}%</div>
