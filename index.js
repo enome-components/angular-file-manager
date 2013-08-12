@@ -22,6 +22,10 @@ mod.directive('fileManager', function () {
     scope: { url: '=', selected: '=selected' },
     controller: function ($scope, $timeout) {
 
+      if (typeof $scope.selected === 'undefined') {
+        $scope.selected = [];
+      }
+
       $scope.path = '/';
 
       $scope.link = function (path) {
